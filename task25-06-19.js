@@ -60,7 +60,7 @@ B.prototype = Object.create(A.prototype);
 B.prototype.constructor = B;
 B.prototype.f2 = function() {};
 
-Задание 2
+// Задание 2
 
 function Bus() {}
 const bus = new Bus();
@@ -70,7 +70,7 @@ Bus.__proto__ === bus.prototype // [Function] === undefined --> false
 Bus.prototype === bus.__proto__ // {} === {} --> true
 Bus.__proto__ === bus.__proto__ // [Function] === {} --> false
 
-Задание 3
+// Задание 3
 
 
 function isMonogamy(arr) {
@@ -98,21 +98,3 @@ isMonogamy([1, 1, 1]) // true
 isMonogamy([1, 2, 0]) // false
 isMonogamy([1, 2, 3, 1, 2, 3]) // false
 
-function isMonogamy(arr) {
-	var direction;
-	for(var i = 1; i < arr.length; i++) {
-		if(arr[i-1] === arr[i]) {
-			continue;
-		}
-
-		const tempDirection = arr[i-1] > arr[i] ? 'up' : 'down';
-
-		if(direction && direction !== tempDirection) {
-			return false;
-		}
-		
-		direction = tempDirection;
-	}
-
-	return true;
-}
